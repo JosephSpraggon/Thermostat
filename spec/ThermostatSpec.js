@@ -21,11 +21,22 @@ describe('Thermostat', function(){
     expect(test.checkTemp()).toEqual(19);
   });
 
+  it('has a power saving mode', function(){
+    expect(test.powerSave).toBe(true);
+  });
+
   it('should have a minimum temperature of 10', function(){
     test.temp = 10;
     expect(function() {
       test.lowerTemp();
     }).toThrowError("Minimum temp reached");
+  });
+
+  it('should have maximum temperature of 25', function() {
+    test.temp = 25
+    expect(function() {
+      test.raiseTemp();
+    }).toThrowError("Maximum temp reached");
   });
 
 });
