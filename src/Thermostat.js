@@ -15,7 +15,12 @@ class Thermostat {
   }
 
   lowerTemp(){
+    if (this.temp >= 11) {
     this.temp -= 1;
+    }
+    else {
+    throw new Error("Minimum temp reached")
+    }
   }
 
 }
