@@ -11,9 +11,16 @@ describe('Thermostat', function(){
     expect(test.checkTemp()).toEqual(20);
   });
 
-  it('the temperature can be raised', function(){
+  it('can raise the temperature', function(){
     test.raiseTemp();
     expect(test.checkTemp()).toEqual(21);
   });
+
+  it('can lower the temperature', function(){
+    test.lowerTemp();
+    expect(test.checkTemp()).toEqual(19);
+  });
+
+
 
 });
